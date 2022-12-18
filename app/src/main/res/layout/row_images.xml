@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="imageResult"
+            type="com.inmobiles.vuzcodingchallenge.model.ImageResult" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivRowImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:loadImage='@{imageResult.largeImageURL}'
+       />
+
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="4dp"
+        android:text='@{imageResult.user}'
+        app:layout_constraintStart_toEndOf="@+id/ivRowImage"
+        app:layout_constraintTop_toTopOf="@+id/ivRowImage"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRowImage"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="18sp" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvViews"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginLeft="14dp"-->
+<!--            android:layout_marginBottom="4dp"-->
+<!--            android:text='@{@string/views+imageResult.views}'-->
+<!--            app:layout_constraintStart_toEndOf="@+id/ivRowImage"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tvUserName"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/ivRowImage"-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="18sp" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
